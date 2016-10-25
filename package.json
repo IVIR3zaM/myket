@@ -1,0 +1,38 @@
+{
+  "name": "cordova-plugin-myket",
+  "version": "1.0.0",
+  "description": "This plugin helps peoples that need use Myket.ir Market intents in cordova projects",
+  "cordova": {
+    "id": "cordova-plugin-myket",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivir3zam/myket.git"
+  },
+  "keywords": [
+    "myket",
+    "myket-utils",
+    "myket-intent",
+    "myket-rate",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": {
+    "name": "Mohammad Reza Maghoul"
+  },
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/ivir3zam/myket/issues"
+  },
+  "homepage": "https://github.com/ivir3zam/myket#readme",
+  "readmeFilename": "README.md"
+}
