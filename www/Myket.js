@@ -27,10 +27,15 @@
 var exec = require("cordova/exec");
 
 var Myket = {
-  details: function(packageName, successCallback, errorCallback, refId) {
+  details: function(packageName, successCallback, errorCallback) {
     var success = (typeof successCallback == "function" ? successCallback : function(){});
     var error = (typeof errorCallback == "function" ? errorCallback : function(){});
-    exec(success, error, "Myket", "details", [packageName, refId]);
+    exec(success, error, "Myket", "details", [packageName]);
+  },
+  developer: function(developerId, successCallback, errorCallback) {
+    var success = (typeof successCallback == "function" ? successCallback : function(){});
+    var error = (typeof errorCallback == "function" ? errorCallback : function(){});
+    exec(success, error, "Myket", "developer", [developerId]);
   },
   comment: function(packageName, successCallback, errorCallback) {
     var success = (typeof successCallback == "function" ? successCallback : function(){});
@@ -40,6 +45,7 @@ var Myket = {
   download: function(packageName, successCallback, errorCallback, refId) {
     var success = (typeof successCallback == "function" ? successCallback : function(){});
     var error = (typeof errorCallback == "function" ? errorCallback : function(){});
+    refId = refId + "";
     exec(success, error, "Myket", "download", [packageName, refId]);
   },
   video: function(packageName, successCallback, errorCallback) {

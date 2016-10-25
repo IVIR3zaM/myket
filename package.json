@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-myket",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This plugin helps peoples that need use Myket.ir Market intents in cordova projects",
   "cordova": {
     "id": "cordova-plugin-myket",

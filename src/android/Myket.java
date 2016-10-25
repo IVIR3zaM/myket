@@ -46,12 +46,25 @@ public class Myket extends CordovaPlugin {
         if (action.equals("details")) {
             try{
                 packageName = args.getString(0);
-                refId = args.getString(1);
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("myket://details?id=" + packageName + "&refId=" + refId));
+                intent.setData(Uri.parse("http://myket.ir/app/" + packageName));
                 intent.setPackage("ir.mservices.market");
                 this.cordova.getActivity().startActivity(intent);
                 callbackContext.success("Details Intent Sent");
+                return true;
+            } catch (JSONException e) {
+                callbackContext.error(e.getMessage());
+                return false;
+            }
+        }
+        if (action.equals("developer")) {
+            try{
+                packageName = args.getString(0);
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://myket.ir/developer/" + packageName + "/apps"));
+                intent.setPackage("ir.mservices.market");
+                this.cordova.getActivity().startActivity(intent);
+                callbackContext.success("Developer Intent Sent");
                 return true;
             } catch (JSONException e) {
                 callbackContext.error(e.getMessage());
@@ -63,7 +76,7 @@ public class Myket extends CordovaPlugin {
             try{
                 packageName = args.getString(0);
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("comment?id=" + packageName));
+                intent.setData(Uri.parse("myket://comment?id=" + packageName));
                 intent.setPackage("ir.mservices.market");
                 this.cordova.getActivity().startActivity(intent);
                 callbackContext.success("Comment Intent Sent");
